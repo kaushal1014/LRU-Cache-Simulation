@@ -19,12 +19,9 @@ class LRU:
                 self.order.pop(0)
             self.order.append(page)
     
-    def stats(self):
+#    def stats(self):
         #add the hit rate and miss rate calc here
-        total= self.hit +self.miss
-        hit_rate=self.hit/total *100
-        miss_rate= self.miss/total *100
-        return{"hits":hit_rate,"misses":miss_rate}
+
 
 #testing
 chinNIG=LRU(5)
@@ -33,4 +30,3 @@ list=[1,1]
 for i in list:
     chinNIG.access(i)
     
-print(chinNIG.stats())
