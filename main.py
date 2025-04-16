@@ -19,9 +19,12 @@ class LRU:
                 self.order.pop(0)
             self.order.append(page)
     
-#    def stats(self):
-        #add the hit rate and miss rate calc here
-
+    def stats(self):
+        sum=self.hit+self.miss
+        if sum>0:
+            return "Hits:",self.hit,"\n","Hit Rate:",self.hit/sum,"\n","Misses:",self.miss,"\n","Miss Rate:",self.miss/sum
+        else:
+            return 0
 
 #testing
 chinNIG=LRU(5)
