@@ -39,8 +39,8 @@ class LRU:
             return 0
         
     #Function to simulate the cache accessing, it uses the random module to create a random sequence of elements.
-    def simulate(self,max):
-        for i in range(0,self.size):
+    def simulate(self,number,max):
+        for i in range(0,number):
             random_page=random.randint(1,max)
             print("Accessing page:",random_page)
             y=self.access(random_page)
@@ -52,8 +52,9 @@ class LRU:
 
 #Creating a class and calling the needed function. The parameter is the size of the cache
 cache=LRU(5)
-#Simulateing the accessing of the cache and the parameter is the max element random can choose upto.
-cache.simulate(100)
+#Simulateing the accessing of the cache and the parameter is the number of pages requested and
+# max element random can choose upto.
+cache.simulate(10,100)
 #Computing the stats and priting it
 x=cache.stats()
 print(x)
