@@ -28,12 +28,14 @@ class LRU:
     #Function to compute the hit and miss rate.
     def stats(self):
         sum=self.hit+self.miss
+        hit_rate=self.hit/sum
+        miss_rate=self.miss/sum
         if sum>0:
             return(
                 f"Hits: {self.hit}\n"
                 f"Misses: {self.miss}\n"
-                f"Hit rate: {self.hit}/{sum}\n"
-                f"Miss rate: {self.miss}/{sum}"
+                f"Hit rate: {hit_rate}\n"
+                f"Miss rate: {miss_rate}"
             )
         else:
             return 0
@@ -51,10 +53,10 @@ class LRU:
 
 
 #Creating a class and calling the needed function. The parameter is the size of the cache
-cache=LRU(5)
-#Simulateing the accessing of the cache and the parameter is the number of pages requested and
+cache=LRU(10)
+#Simulating the accessing of the cache and the parameter is the number of pages requested and
 # max element random can choose upto.
-cache.simulate(10,100)
+cache.simulate(20,100)
 #Computing the stats and priting it
 x=cache.stats()
 print(x)
